@@ -6,7 +6,7 @@ on:
 
 defaults:
   run:
-    working-directory: "./zad 6/projekt"
+    working-directory: "./projekt"
 
 permissions:
   contents: read
@@ -32,7 +32,7 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
-          cache-dependency-path: "./zad 6/projekt/package-lock.json"
+          cache-dependency-path: "./projekt/package-lock.json"
           
       - name: Install dependencies
         run: npm install
@@ -46,7 +46,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './zad 6/projekt/dist'
+          path: './projekt/dist'
           
       - name: Deploy to GitHub Pages
         id: deployment
